@@ -27,6 +27,13 @@ client.connect(err => {
             })
     })
 
+    app.get('/order', (req, res) => {
+        shopCollection.find()
+            .toArray((err, documents) => {
+                res.send(documents)
+            })
+    })
+
 
     app.post('/addProducts', (req, res) => {
         const eShop = req.body;
